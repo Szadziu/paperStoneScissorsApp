@@ -32,47 +32,40 @@ const startGame = () => {
 
   amountGames++;
   if (userChoice === compChoice) {
-    console.log("remis");
     drawGames++;
     document.querySelector(".dGam").textContent = drawGames;
     document.querySelector(".amGam").textContent = amountGames;
-    document.querySelector(".winner").textContent = "remis";
+    document.querySelector(".winner").textContent = "draw";
   } else if (userChoice === 0 && compChoice === 1) {
-    console.log("wygrałeś, przeciwnik miał kamień");
     winGames++;
     document.querySelector(".wGam").textContent = winGames;
     document.querySelector(".amGam").textContent = amountGames;
-    document.querySelector(".winner").textContent = "wygrałeś";
+    document.querySelector(".winner").textContent = "you won";
   } else if (userChoice === 0 && compChoice === 2) {
-    console.log("przegrałeś, przeciwnik miał nożyce");
     loseGames++;
     document.querySelector(".lGam").textContent = loseGames;
     document.querySelector(".amGam").textContent = amountGames;
-    document.querySelector(".winner").textContent = "przegrałeś";
+    document.querySelector(".winner").textContent = "you lose";
   } else if (userChoice === 1 && compChoice === 0) {
-    console.log("przegrałeś, przeciwnik miał papier");
     loseGames++;
     document.querySelector(".lGam").textContent = loseGames;
     document.querySelector(".amGam").textContent = amountGames;
-    document.querySelector(".winner").textContent = "przegrałeś";
+    document.querySelector(".winner").textContent = "you lose";
   } else if (userChoice === 1 && compChoice === 2) {
-    console.log("wygrałeś, przeciwnik miał nożyce");
     winGames++;
     document.querySelector(".wGam").textContent = winGames;
     document.querySelector(".amGam").textContent = amountGames;
-    document.querySelector(".winner").textContent = "wygrałeś";
+    document.querySelector(".winner").textContent = "you won";
   } else if (userChoice === 2 && compChoice === 0) {
-    console.log("wygrałeś, przeciwnik miał papier");
     winGames++;
     document.querySelector(".wGam").textContent = winGames;
     document.querySelector(".amGam").textContent = amountGames;
-    document.querySelector(".winner").textContent = "wygrałeś";
+    document.querySelector(".winner").textContent = "you won";
   } else if (userChoice === 2 && compChoice === 1) {
-    console.log("przegrałeś, przeciwnik miał kamień");
     loseGames++;
     document.querySelector(".lGam").textContent = loseGames;
     document.querySelector(".amGam").textContent = amountGames;
-    document.querySelector(".winner").textContent = "przegrałeś";
+    document.querySelector(".winner").textContent = "you lose";
   }
   startButton.disabled = "true";
 };
@@ -83,19 +76,19 @@ const checkResult = (ourChoice) => {
     stoneChoice.style.pointerEvents = "none";
     scissorsChoice.style.pointerEvents = "none";
     userChoice = 0;
-    yourChoice.textContent = "papier";
+    yourChoice.textContent = "paper";
   } else if (ourChoice.className === "img2") {
     ourChoice.dataset.option = "choice";
     paperChoice.style.pointerEvents = "none";
     scissorsChoice.style.pointerEvents = "none";
     userChoice = 1;
-    yourChoice.textContent = "kamień";
+    yourChoice.textContent = "stone";
   } else if (ourChoice.className === "img3") {
     ourChoice.dataset.option = "choice";
     paperChoice.style.pointerEvents = "none";
     stoneChoice.style.pointerEvents = "none";
     userChoice = 2;
-    yourChoice.textContent = "nożyce";
+    yourChoice.textContent = "scissors";
   }
 };
 
